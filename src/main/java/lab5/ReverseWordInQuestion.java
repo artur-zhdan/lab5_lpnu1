@@ -5,12 +5,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ReverseWordInQuestion {
+    private static final Pattern QUESTION_PATTERN = Pattern.compile("(what|where|when|who|whom|whose|why|how|which).*?\\?", Pattern.CASE_INSENSITIVE);
+
     public String reverse(String text) {
         if (text == "" || text == null) {
             throw new IllegalArgumentException("Text is null");
         }
-        Pattern pattern = Pattern.compile("(what|where|when|who|whom|whose|why|how|which).*?\\?", Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(text);
+        Matcher matcher = QUESTION_PATTERN.matcher(text);
         StringBuffer result = new StringBuffer();
         while (matcher.find()) {
             String sentence = matcher.group();
