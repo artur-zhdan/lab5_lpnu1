@@ -37,10 +37,8 @@ public class ReverseWordInQuestion {
             return;
         }
 
-        String text = args[0];
-
         ReverseWordInQuestion reverseWordInQuestion = new ReverseWordInQuestion();
-        reverseWordInQuestion.reverse(text);
+        reverseWordInQuestion.reverse(args[0]);
     }
 
 }
