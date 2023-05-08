@@ -32,11 +32,15 @@ public class ReverseWordInQuestion {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a text: ");
-        String text = scanner.nextLine();
+        if (args.length == 0) {
+            System.out.println("Please provide a text.");
+            return;
+        }
+
+        String text = args[0];
 
         ReverseWordInQuestion reverseWordInQuestion = new ReverseWordInQuestion();
         reverseWordInQuestion.reverse(text);
     }
+
 }
