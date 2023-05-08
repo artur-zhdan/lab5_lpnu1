@@ -23,9 +23,6 @@ public class ReverseWordInQuestion {
         }
         matcher.appendTail(result);
 
-        if (text.equals(result.toString())) {
-            throw new IllegalArgumentException("No question sentences");
-        }
 
         System.out.println(result.toString());
         return result.toString();

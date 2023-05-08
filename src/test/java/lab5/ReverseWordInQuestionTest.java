@@ -18,8 +18,9 @@ public class ReverseWordInQuestionTest {
     void testIfTextNull() {
         String text = "";
         ReverseWordInQuestion object = new ReverseWordInQuestion();
-        Assertions.assertThrows(IllegalArgumentException.class, () ->
-                object.reverse(text));
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            object.reverse(text);
+        });
     }
 
     @Test
