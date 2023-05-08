@@ -5,8 +5,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ReverseWordInQuestion {
-    public String Reversion(String text) {
-        if( text == "" || text == null) {
+    public String reverse(String text) {
+        if (text == "" || text == null) {
             throw new IllegalArgumentException("Text is null");
         }
         Pattern pattern = Pattern.compile("(what|where|when|who|whom|whose|why|how|which).*?\\?", Pattern.CASE_INSENSITIVE);
@@ -14,7 +14,7 @@ public class ReverseWordInQuestion {
         StringBuffer result = new StringBuffer();
         while (matcher.find()) {
             String sentence = matcher.group();
-            String[] words = sentence.split("\s+");
+            String[] words = sentence.split("\\s+");
             String wordToReverse = words[words.length / 2];
             StringBuilder reversedWord = new StringBuilder(wordToReverse).reverse();
             words[words.length / 2] = reversedWord.toString();
@@ -23,7 +23,7 @@ public class ReverseWordInQuestion {
         }
         matcher.appendTail(result);
 
-        if (text==result.toString()){
+        if (text.equals(result.toString())) {
             throw new IllegalArgumentException("No question sentences");
         }
 
@@ -36,7 +36,7 @@ public class ReverseWordInQuestion {
         System.out.print("Enter a text: ");
         String text = scanner.nextLine();
 
-        ReverseWordInQuestion reverser = new ReverseWordInQuestion();
-        reverser.Reversion(text);
+        ReverseWordInQuestion reverseWordInQuestion = new ReverseWordInQuestion();
+        reverseWordInQuestion.reverse(text);
     }
 }
